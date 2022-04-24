@@ -9,7 +9,7 @@
 
 
   
-![GitHub](https://img.shields.io/github/license/Neo-Creations/Axel?style=for-the-badge) ![GitHub repo size](https://img.shields.io/github/repo-size/Neo-Creations/Axel?style=for-the-badge) ![GitHub contributors](https://img.shields.io/github/contributors/Neo-Creations/Axel?style=for-the-badge) ![GitHub issues](https://img.shields.io/github/issues-raw/Neo-Creations/Axel?style=for-the-badge) ![GitHub package.json version](https://img.shields.io/github/package-json/v/Neo-Creations/Axel?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/Neo-Creations/Axel?style=for-the-badge) ![GitHub repo size](https://img.shields.io/github/repo-size/Neo-Creations/Axel?style=for-the-badge) ![GitHub contributors](https://img.shields.io/github/contributors/Neo-Creations/Axel?style=for-the-badge) ![GitHub issues](https://img.shields.io/github/issues-raw/Neo-Creations/Axel?style=for-the-badge) ![Number of commits](https://img.shields.io/badge/dynamic/json?label=Builds&query=%24.length&url=https%3A%2F%2Fapi.github.com%2Frepos%2FNeo-Creations%2FAxel%2Fcommits&style=for-the-badge)
   
 * * *
 </div>
