@@ -2,7 +2,7 @@
 
 # **Axel**
   
-**An open-source HTML5-based desktop operating system**
+**A JavaScript desktop operating system that runs in your browser.**
   
   
 <br>
