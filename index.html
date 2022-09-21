@@ -4,17 +4,6 @@
 		<meta charset="UTF-8">
 		<title>neoOS Desktop</title>
 		<link href="resources/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-		<style>
-			body {
-				cursor: default;
-				-webkit-touch-callout: none; /* iOS Safari */
-				-webkit-user-select: none; /* Safari */
-				-khtml-user-select: none; /* Konqueror HTML */
-				-moz-user-select: none; /* Old versions of Firefox */
-				-ms-user-select: none; /* Internet Explorer/Edge */
-				user-select: none;
-			}
-		</style>
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-lg bg-dark">
@@ -33,13 +22,28 @@
 						<li><a class="dropdown-item" href="#">Shut down</a></li>
 					</ul>
 				</div>
-				<div class="d-flex" role="search">
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#fff" class="bi bi-search" viewBox="0 0 16 16">
-						<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-					</svg>
-				</div>
+				<span class="navbar-text">
+					<span id="timeDisplay"></span>
+				</span>
 			</div>
 		</nav>
 		<script src="resources/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+		<script>
+			function startTime() {
+				const today = new Date();
+				let h = today.getHours();
+				let m = today.getMinutes();
+				let s = today.getSeconds();
+				m = checkTime(m);
+				s = checkTime(s);
+				document.getElementById('timeDisplay').innerHTML =  h + ":" + m + ":" + s;
+				setTimeout(startTime, 1000);
+			}
+			
+			function checkTime() {
+				if (i < 10) {i = "0" + i};
+				return i;
+			}
+		</script>
 	</body>
 </html>
