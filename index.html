@@ -26,6 +26,7 @@
 			</div>
 		</nav>
 		<script src="./resources/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+		<script src="./resources/jquery-3.6.1.min.js"></script>
 		<script src="./resources/ventus.js" crossorigin="anonymous"></script>
 		<script>
 			function startTime() {
@@ -44,29 +45,9 @@
 				if (i < 10) {i = "0" + i};
 				return i;
 			}
-			document.addEventListener("DOMContentLoaded", function () {
-				var vm = new Ventus.WindowManager();
-				var pos = 50;
-				var num = 1;
-				function openApplication(title, width, height) {
-					vm.createWindow({
-						title: title,
-						x: (pos += 60),
-						y: pos,
-						width: width,
-						height: height,
-						animations: true,
-						stayinspace: true,
-						events: {
-							closed: function () {
-								this.destroy();
-							}
-						}
-					})
-					.open();
-				}
+			$(document).ready(function() {
+				$('label').disableSelection();
 			});
-			document.querySelector('.expose')
 		</script>
 	</body>
 </html>
