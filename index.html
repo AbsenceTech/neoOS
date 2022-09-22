@@ -8,29 +8,20 @@
 	<body onload="startTime()" style="background-size:cover;background-image:url('./branding/wallpaper.jpg');background-color:#000;">
 		<nav class="navbar sticky-top navbar-expand-lg bg-dark">
 			<div class="container-fluid">
-				<a class="navbar-brand dropdown-toggle" data-bs-toggle="offcanvas" href="#menu" role="button" aria-controls="menu" style="color:white;cursor:default;">
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#fff" viewBox="0 0 16 16">
-						<path d="M9.05.435c-.58-.58-1.52-.58-2.1 0L4.047 3.339 8 7.293l3.954-3.954L9.049.435zm3.61 3.611L8.708 8l3.954 3.954 2.904-2.905c.58-.58.58-1.519 0-2.098l-2.904-2.905zm-.706 8.614L8 8.708l-3.954 3.954 2.905 2.904c.58.58 1.519.58 2.098 0l2.905-2.904zm-8.614-.706L7.292 8 3.339 4.046.435 6.951c-.58.58-.58 1.519 0 2.098l2.904 2.905z"/>
-					</svg>
-				</a>
-				<div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="menu" aria-labelledby="menu">
-					<div class="offcanvas-header">
-						<h5 class="offcanvas-title" id="menuLabel">Menu</h5>
-						<button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-					</div>
-					<div class="offcanvas-body">
-						<div>
-							Welcome to your neoOS menu
-						</div>
-					</div>
+				<div class="dropdown">
+					<a class="navbar-brand dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:white;cursor:default;">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#fff" viewBox="0 0 16 16">
+							<path d="M9.05.435c-.58-.58-1.52-.58-2.1 0L4.047 3.339 8 7.293l3.954-3.954L9.049.435zm3.61 3.611L8.708 8l3.954 3.954 2.904-2.905c.58-.58.58-1.519 0-2.098l-2.904-2.905zm-.706 8.614L8 8.708l-3.954 3.954 2.905 2.904c.58.58 1.519.58 2.098 0l2.905-2.904zm-8.614-.706L7.292 8 3.339 4.046.435 6.951c-.58.58-.58 1.519 0 2.098l2.904 2.905z"/>
+						</svg>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-dark" style="cursor:default">
+						<li><a class="dropdown-item" onclick="window.location.href = '#'">Google</a></li>
+						<li><a class="dropdown-item" onclick="window.location.href = '#'">Information</a></li>
+						<li><hr class="dropdown-divider"></li>
+						<li><a class="dropdown-item" onclick="window.location.href = '#'">Sleep</a></li>
+						<li><a class="dropdown-item" onclick="window.location.href = '#'">Shut down</a></li>
+					</ul>
 				</div>
-				<!--<ul class="dropdown-menu dropdown-menu-dark" style="cursor:default">
-					<li><a class="dropdown-item" onclick="window.location.href = '#'">Google</a></li>
-					<li><a class="dropdown-item" onclick="window.location.href = '#'">Information</a></li>
-					<li><hr class="dropdown-divider"></li>
-					<li><a class="dropdown-item" onclick="window.location.href = '#'">Sleep</a></li>
-					<li><a class="dropdown-item" onclick="window.location.href = '#'">Shut down</a></li>
-				</ul>-->
 				<span class="navbar-text" id="timeDisplay" style="color:white;cursor:default;"></span>
 			</div>
 		</nav>
