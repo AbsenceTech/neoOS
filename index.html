@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>neoOS Desktop</title>
-		<link href="resources/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+		<link href="resources/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 	</head>
 	<body onload="startTime()">
 		<nav class="navbar navbar-expand-lg bg-dark">
@@ -22,19 +22,20 @@
 						<li><a class="dropdown-item" href="#">Shut down</a></li>
 					</ul>
 				</div>
-				<span class="navbar-text" id="timeDisplay"></span>
+				<span class="navbar-text" id="timeDisplay" style="color:white"></span>
 			</div>
 		</nav>
-		<script src="resources/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+		<script src="resources/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 		<script>
 			function startTime() {
 				const today = new Date();
+				let d = today.getDate();
+				let mo = today.getMonth();
+				let y = today.getFullYear();
 				let h = today.getHours();
 				let m = today.getMinutes();
-				let s = today.getSeconds();
 				m = checkTime(m);
-				s = checkTime(s);
-				document.getElementById('timeDisplay').innerHTML =  h + ":" + m + ":" + s;
+				document.getElementById('timeDisplay').innerHTML = d + "/" + mo + "/" + y + " " + h + ":" + m;
 				setTimeout(startTime, 1000);
 			}
 			
