@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>neoOS Desktop</title>
+		<link rel="preload" href="./resources/winbox.bundle.min.js" as="script">
+		<link href="./resources/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+		<style>
+			.winbox {
+				background: #212529;
+				border-radius: 12px 12px 0 0;
+				box-shadow: 5px 10px 18px;
+			}
+			.winbox-min {
+				border-radius: 0;
+			}
+			.wb-body {
+				margin: 4px;
+			}
+			.wb-control * {
+				opacity: 0.65;
+			}
+			.wb-control *:hover {
+				opacity: 1;
+			}
+			.wb-full {
+				display: none;
+			}
+			.wb-body::-webkit-scrollbar {
+				width: 12px;
+			}
+			.wb-body::-webkit-scrollbar-track {
+				background: transparent;
+			}
+			.wb-body::-webkit-scrollbar-thumb {
+				border-radius: 10px;
+				background: #263040;
+			}
+			.wb-body::-webkit-scrollbar-thumb:window-inactive {
+				background: #181f2a;
+			}
+			.wb-body::-webkit-scrollbar-corner {
+				background: transparent;
+			}
+		</style>
+	</head>
+	<body onload="startTime()" style="background-size:cover;background-image:url('./branding/wallpaper.jpg');background-color:#000;">
+		<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+			<div class="container-fluid">
+				<div class="dropdown">
+					<a class="navbar-brand dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:white;cursor:default;">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#fff" viewBox="0 0 16 16">
+							<path d="M9.05.435c-.58-.58-1.52-.58-2.1 0L4.047 3.339 8 7.293l3.954-3.954L9.049.435zm3.61 3.611L8.708 8l3.954 3.954 2.904-2.905c.58-.58.58-1.519 0-2.098l-2.904-2.905zm-.706 8.614L8 8.708l-3.954 3.954 2.905 2.904c.58.58 1.519.58 2.098 0l2.905-2.904zm-8.614-.706L7.292 8 3.339 4.046.435 6.951c-.58.58-.58 1.519 0 2.098l2.904 2.905z"/>
+						</svg>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-dark me-auto mb-2 mb-lg-0" style="cursor:default">
+						<li><a class="dropdown-item" onclick="openApp('Web Browser', 'https://www.bing.com/')">Web Browser</a></li>
+						<li><a class="dropdown-item" onclick="window.location.href = '#'">Information</a></li>
+						<li><hr class="dropdown-divider"></li>
+						<li><a class="dropdown-item" onclick="window.location.href = '#'">Sleep</a></li>
+						<li><a class="dropdown-item" onclick="window.location.href = '#'">Shut down</a></li>
+					</ul>
+				</div>
+				<ul class="navbar-nav" id="appList"></ul>
+				<span class="navbar-text">
+					<span id="timeDisplay" style="color:white"></span>
+				</span>
+			</div>
+		</nav>
+		<script src="./resources/winbox.bundle.min.js" async></script>
+		<script src="./resources/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+		<script src="./resources/jquery-3.6.1.min.js"></script>
+		<script>
+			function startTime() {
+				const today = new Date();
+				let d = today.getDate();
+				let mo = today.getMonth();
+				let y = today.getFullYear();
+				let h = today.getHours();
+				let m = today.getMinutes();
+				m = checkTime(m);
+				document.getElementById('timeDisplay').innerHTML = d + "/" + mo + "/" + y + " " + h + ":" + m;
+				setTimeout(startTime, 1000);
+			}
+			function checkTime(i) {
+				if (i < 10) {i = "0" + i};
+				return i;
+			}
+			function openApp(title, url) {
+				let Window = new WinBox({
+					title: title,
+					url: url,
+					width: 640,
+					height: 480,
+					x: "center",
+					y: "center",
+					top: 55,
+					right: 0,
+					bottom: 0,
+					left: 0,
+					oncreate: function() {
+						let appListName = document.createElement("li");
+						let node = document.createTextNode(title);
+						appListName.appendChild(node);
+						appListName.setAttribute("id", this.id);
+						appListName.setAttribute("class", "nav-link")
+						let appList = document.getElementById("appList");
+						appList.appendChild(appListName);
+					},
+					onclose: function() {
+						let appListName = document.getElementById(this.id);
+						appListName.remove();
+					},
+				});
+			}
+			$(document).ready(function() {
+				$('body').disableSelection();
+			});
+		</script>
+	</body>
+</html>
