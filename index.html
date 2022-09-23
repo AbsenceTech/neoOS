@@ -23,6 +23,7 @@
 						<li><a class="dropdown-item" onclick="window.location.href = '#'">Shut down</a></li>
 					</ul>
 				</div>
+				<ul class="navbar-nav" id="appList"></ul>
 				<span class="navbar-text" id="timeDisplay" style="color:white;cursor:default;"></span>
 			</div>
 		</nav>
@@ -52,7 +53,19 @@
 					width: 640,
 					height: 480,
 					x: "center",
-					y: "center"
+					y: "center",
+					oncreate: function() {
+						let appListName = document.createElement("li");
+						let node = document.createTextNode(title);
+						appListName.appendChild(node);
+						appListName.setAttribute("id", this.id);
+						let appList = document.getElementById("appList");
+						appList.appendChild(appListName);
+					},
+					onclose: function() {
+						let appListName = document.getElementById(this.id);
+						appListName.remove();
+					}
 				});
 			}
 			$(document).ready(function() {
