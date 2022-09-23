@@ -24,7 +24,7 @@
 					</ul>
 				</div>
 				<ul class="navbar-nav" id="appList"></ul>
-				<span class="navbar-text" id="timeDisplay"></span>
+				<span class="navbar-text" id="timeDisplay" style="color:white"></span>
 			</div>
 		</nav>
 		<script src="./resources/winbox.bundle.min.js" async></script>
@@ -54,6 +54,7 @@
 					height: 480,
 					x: "center",
 					y: "center",
+					top: 55,
 					oncreate: function() {
 						let appListName = document.createElement("li");
 						let node = document.createTextNode(title);
