@@ -9,7 +9,7 @@
 
 
   
-![GitHub license](https://img.shields.io/github/license/Neo-Creations/NeoOSTests?style=for-the-badge) ![Lines of code](https://img.shields.io/tokei/lines/github/Neo-Creations/NeoOSTests?style=for-the-badge) ![GitHub repo file count](https://img.shields.io/github/directory-file-count/Neo-Creations/NeoOSTests?style=for-the-badge) ![GitHub repo size](https://img.shields.io/github/repo-size/Neo-Creations/NeoOSTests?style=for-the-badge) ![GitHub contributors](https://img.shields.io/github/contributors/Neo-Creations/NeoOSTests?style=for-the-badge) ![GitHub issues](https://img.shields.io/github/issues-raw/Neo-Creations/NeoOSTests?style=for-the-badge) ![GitHub build number](https://img.shields.io/badge/dynamic/json?label=Builds&query=%24.length&url=https%3A%2F%2Fapi.github.com%2Frepos%2FNeo-Creations%2FNeoOSTests%2Fcommits&style=for-the-badge)
+![GitHub license](https://img.shields.io/github/license/Neo-Creations/neoOS?style=for-the-badge) ![Lines of code](https://img.shields.io/tokei/lines/github/Neo-Creations/neoOS?style=for-the-badge) ![GitHub repo file count](https://img.shields.io/github/directory-file-count/Neo-Creations/neoOS?style=for-the-badge) ![GitHub repo size](https://img.shields.io/github/repo-size/Neo-Creations/neoOS?style=for-the-badge) ![GitHub contributors](https://img.shields.io/github/contributors/Neo-Creations/neoOS?style=for-the-badge) ![GitHub issues](https://img.shields.io/github/issues-raw/Neo-Creations/neoOS?style=for-the-badge) ![GitHub build number](https://img.shields.io/badge/dynamic/json?label=Builds&query=%24.length&url=https%3A%2F%2Fapi.github.com%2Frepos%2FNeo-Creations%2FneoOS%2Fcommits&style=for-the-badge)
   
 * * *
 </div>
