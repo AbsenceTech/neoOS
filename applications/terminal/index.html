@@ -3,8 +3,34 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Terminal Application</title>
+		<link rel="stylesheet" href="./jquery.terminal.min.css">
 	</head>
 	<body>
+		<div id="terminal"></div>
 		<script src="../../resources/jquery-3.6.1.min.js"></script>
+		<script src="./jquery.terminal.min.js"></script>
+		<script>
+			let __EVAL = (s) => eval(`void (__EVAL = ${__EVAL}); ${s}`);
+			$(function() {
+				$('#term_demo').terminal(function(command) {
+					if (command !== '') {
+						try {
+							var result = __EVAL(command);
+							if (result !== undefined) {
+								this.echo(new String(result));
+							}
+						} catch(e) {
+							this.error(new String(e));
+						}
+					} else {
+						this.echo('');
+					}
+				}, {
+					greetings: 'neoOS Terminal',
+					name: 'neoterminal',
+					prompt: '> '
+				});
+			});
+		</script>
 	</body>
 </html>
