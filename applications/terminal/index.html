@@ -12,7 +12,7 @@
 		<script>
 			let __EVAL = (s) => eval(`void (__EVAL = ${__EVAL}); ${s}`);
 			$(function() {
-				$('#term_demo').terminal(function(command) {
+				$('#terminal').terminal(function(command) {
 					if (command !== '') {
 						try {
 							var result = __EVAL(command);
