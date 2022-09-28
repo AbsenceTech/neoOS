@@ -42,6 +42,30 @@
 			.wb-body::-webkit-scrollbar-corner {
 				background: transparent;
 			}
+			html, body, * {
+				cursor: none;
+			}
+			.cursor-dot, .cursor-dot-outline {
+				pointer-events: none;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				border-radius: 50%;
+				opacity: 0;
+				transform: translate(-50%, -50%);
+				transition: opacity 0.3s ease-in-out,
+					transform 0.3s ease-in-out;
+			}
+			.cursor-dot {
+				width: 8px;
+				weigth: 8px;
+				background-color: #eee;
+			}
+			.cursor-dot-outline {
+				width: 40px;
+				height: 40px;
+				background-color: rgba(242, 242, 242, 0.5);
+			}
 		</style>
 	</head>
 	<body onload="startTime()" style="background-size:cover;background-image:url('./branding/wallpaper.jpg');background-color:#000;">
@@ -56,20 +80,116 @@
 					<ul class="dropdown-menu dropdown-menu-dark me-auto mb-2 mb-lg-0" style="cursor:default">
 						<li><a class="dropdown-item" onclick="openApp('Web Browser', 'https://www.bing.com/', 640, 480)">Web Browser</a></li>
 						<li><a class="dropdown-item" onclick="openApp('Terminal', './applications/terminal/', 640, 480)">Terminal</a></li>
-						<li><hr class="dropdown-divider"></li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
 						<li><a class="dropdown-item" onclick="openApp('Information', './information.html', 480, 360)">About</a></li>
 					</ul>
 				</div>
 				<ul class="navbar-nav" id="appList"></ul>
 				<span class="navbar-text">
-					<span id="timeDisplay" style="color:white"></span>
+				<span id="timeDisplay" style="color:white"></span>
 				</span>
 			</div>
 		</nav>
+		<div class="cursor-dot-outline"></div>
+		<div class="cursor-dot"></div>
 		<script src="./resources/winbox.bundle.min.js" async></script>
 		<script src="./resources/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 		<script src="./resources/jquery-3.6.1.min.js"></script>
 		<script>
+			let cursor = {
+			 delay: 8,
+			 _x: 0,
+			 _y: 0,
+			 endX: (window.innerWidth / 2),
+			 endY: (window.innerHeight / 2),
+			 cursorVisible: true,
+			 cursorEnlarged: false,
+			 $dot: document.querySelector('.cursor-dot'),
+			 $outline: document.querySelector('.cursor-dot-outline'),
+			 init: function() {
+			     this.dotSize = this.$dot.offsetWidth;
+			     this.outlineSize = this.$outline.offsetWidth;
+			     this.setupEventListeners();
+			     this.animateDotOutline();
+			 },
+			 setupEventListeners: function() {
+			     let self = this;
+			     document.querySelectorAll('a').forEach(function(el) {
+			         el.addEventListener('mouseover', function() {
+			             self.cursorEnlarged = true;
+			             self.toggleCursorSize();
+			         });
+			         el.addEventListener('mouseout', function() {
+			             self.cursorEnlarged = false;
+			             self.toggleCursorSize();
+			         });
+			     });
+			     document.addEventListener('mousedown', function() {
+			         self.cursorEnlarged = true;
+			         self.toggleCursorSize();
+			     });
+			     document.addEventListener('mouseup', function() {
+			         self.cursorEnlarged = false;
+			         self.toggleCursorSize();
+			     });
+			     document.addEventListener('mousemove', function(e) {
+			         self.cursorVisible = true;
+			         self.toggleCursorVisibility();
+			         self.endX = e.pageX;
+			         self.endY = e.pageY;
+			         self.$dot.style.top = self.endY + 'px';
+			         self.$dot.style.left = self.endX + 'px';
+			     });
+			     document.addEventListener('mouseenter', function(e) {
+			         self.cursorVisible = true;
+			         self.toggleCursorVisibility();
+			         self.$dot.style.opacity = 1;
+			         self.$outline.style.opacity = 1;
+			     });
+			     
+			     document.addEventListener('mouseleave', function(e) {
+			         self.cursorVisible = true;
+			         self.toggleCursorVisibility();
+			         self.$dot.style.opacity = 0;
+			         self.$outline.style.opacity = 0;
+			     });
+			 },
+			 animateDotOutline: function() {
+			     let self = this;
+			     
+			     self._x += (self.endX - self._x) / self.delay;
+			     self._y += (self.endY - self._y) / self.delay;
+			     self.$outline.style.top = self._y + 'px';
+			     self.$outline.style.left = self._x + 'px';
+			     
+			     requestAnimationFrame(this.animateDotOutline.bind(self));
+			 },
+			 toggleCursorSize: function() {
+			     let self = this;
+			     
+			     if (self.cursorEnlarged) {
+			         self.$dot.style.transform = 'translate(-50%, -50%) scale(0.75)';
+			         self.$outline.style.transform = 'translate(-50%, -50%) scale(1.5)';
+			     } else {
+			         self.$dot.style.transform = 'translate(-50%, -50%) scale(1)';
+			         self.$outline.style.transform = 'translate(-50%, -50%) scale(1)';
+			     }
+			 },
+			 toggleCursorVisibility: function() {
+			     let self = this;
+			     
+			     if (self.cursorVisible) {
+			         self.$dot.style.opacity = 1;
+			         self.$outline.style.opacity = 1;
+			     } else {
+			         self.$dot.style.opacity = 0;
+			         self.$outline.style.opacity = 0;
+			     }
+			 }
+			}
+			cursor.init();
 			function startTime() {
 				const today = new Date();
 				let d = today.getDate();
