@@ -117,6 +117,12 @@
 					onclose: function() {
 						let appListName = document.getElementById(this.id);
 						appListName.remove();
+					},
+					onfocus: function(){
+						this.setBackground("#212529");
+					},
+					onblur: function(){
+						this.setBackground("#121517");
 					}
 				});
 			}
