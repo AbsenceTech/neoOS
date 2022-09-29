@@ -65,12 +65,16 @@
 						<li><a class="dropdown-item" onclick="openApp('Web Browser', 'https://www.bing.com/', 640, 480)">Web Browser</a></li>
 						<li><a class="dropdown-item" onclick="openApp('Terminal', './applications/terminal/', 640, 480)">Terminal</a></li>
 						<li><hr class="dropdown-divider"></li>
+						<li><a class="dropdown-item" onclick="openApp('Welcome', './welcome.html', 480, 360)">About</a></li>
 						<li><a class="dropdown-item" onclick="openApp('Information', './information.html', 480, 360)">About</a></li>
 					</ul>
 				</div>
 				<ul class="navbar-nav" id="appList"></ul>
 				<span class="navbar-text">
-					<span id="timeDisplay" style="color:white"></span>
+					<ul class="list-inline">
+						<li class="list-inline-item" id="dateDisplay" style="color:white">Loading date</li>
+						<li class="list-inline-item" id="timeDisplay" style="color:white">Loading time</li>
+					</ul>
 				</span>
 			</div>
 		</nav>
@@ -86,7 +90,8 @@
 				let h = today.getHours();
 				let m = today.getMinutes();
 				m = checkTime(m);
-				document.getElementById('timeDisplay').innerHTML = d + "/" + mo + "/" + y + " " + h + ":" + m;
+				document.getElementById('dateDisplay').innerHTML = d + "/" + mo + "/" + y;
+				document.getElementById('timeDisplay').innerHTML = h + ":" + m;
 				setTimeout(startTime, 1000);
 			}
 			function checkTime(i) {
