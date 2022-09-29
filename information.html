@@ -6,16 +6,32 @@
 		<link href="./resources/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 	</head>
 	<body>
-		<div class="container-fluid">
+		<div class="container">
 			<div class="row">
 				<div class="col-4">
 					<img src="./branding/neoicon.png" alt="neoOS">
 				</div>
 				<div class="col-8">
 					<p class="lead"><strong>neoOS</strong> Dev</p>
-					<p>Some features may or may not be available.</p>
+					<hr>
+					<dl class="row">
+						<dt class="col-sm-3">Battery Percentage</dt>
+						<dd class="col-sm-9" id="battery">N/A</dd>
+						<dt class="col-sm-3">Memory</dt>
+						<dd class="col-sm-9" id="ram">N/A</dd>
+						<dt class="col-sm-3">Logical Cores</dt>
+						<dd class="col-sm-9" id="cores">N/A</dd>
+					</dl>
 				</div>
 			</div>
-		</div>	
+		</div>
+		<script>
+			navigator.getBattery().then(async function(battery) {
+				let batteryPercentage = battery.level * 100;
+				await document.getElementById('battery').innerHTML = batteryPercentage.toString() + '%';
+			});
+			document.getElementById('ram').innerHTML = navigator.deviceMemory.toString() + ' GB';
+			document.getElementById('cores').innerHTML = navigator.hardwareConcurrency.toString() + ' cores';
+		</script>
 	</body>
 </html>
