@@ -100,7 +100,7 @@
 
 body {
 	margin: 0;
-	font-family: 'Inter'
+	font-family: 'Inter', sans-serif;
 	font-size: var(--bs-body-font-size);
 	font-weight: var(--bs-body-font-weight);
 	line-height: var(--bs-body-line-height);
