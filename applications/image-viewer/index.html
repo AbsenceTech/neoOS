@@ -21,7 +21,20 @@
 	</head>
 	<body>
 		<div id="content">
-			<p class="text-muted text-center">No image open.</p>
+			<p class="text-muted text-center" id="noimg">No image open.</p>
 		</div>
+		<script>
+			const params = new Proxy(new URLSearchParams(window.location.search), {
+				get: (searchParams, prop) => searchParams.get(prop)
+			});
+			if (params.img) {
+				let image = document.createElement("img");
+				image.setAttribute("src", params.img);
+				image.setAttribute("class", "img-fluid");
+				image.setAttribute("alt", 'Image failed to load');
+				document.getElementById("content").appendChild(image);
+				document.getElementById("noimg").remove();
+			}
+		</script>
 	</body>
 </html>
