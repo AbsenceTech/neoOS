@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Information Application</title>
+		<link href="../../resources/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+		<style>
+			.center {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="center">
+			<img src="../../branding/neologo.png" alt="Neo Search" style="width:30%">
+			<form action="https://cse.google.com/cse">
+				<div class="input-group mb-3">
+					<input type="hidden" name="cx" id="cx" value="42bca0a13596e4a82">
+					<input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="search-input" name="q" id="q">
+					<button class="btn btn-outline-success" type="submit" id="search-input" value="submit">Button</button>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
