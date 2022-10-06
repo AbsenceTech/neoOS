@@ -30,10 +30,10 @@
 			if (params.img) {
 				let image = document.createElement("img");
 				image.setAttribute("src", params.img);
-				image.setAttribute("class", "img-fluid");
+				image.setAttribute("class", "img-fluid text-center");
 				image.setAttribute("alt", 'Image failed to load');
-				document.getElementById("content").appendChild(image);
-				document.getElementById("noimg").remove();
+				document.body.appendChild(image);
+				document.getElementById("content").remove();
 			}
 		</script>
 	</body>
