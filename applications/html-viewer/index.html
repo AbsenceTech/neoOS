@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>HTML Viewer Application</title>
+		<link href="../../resources/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+		<style>
+			body {
+				background-color: #000;
+			}
+			div {
+				height: 200px;
+				width: 400px;
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				margin-top: -100px;
+				margin-left: -200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="content">
+			<p class="text-muted text-center" id="noimg">No image open.</p>
+		</div>
+		<script>
+			const params = new Proxy(new URLSearchParams(window.location.search), {
+				get: (searchParams, prop) => searchParams.get(prop)
+			});
+			if (params.file) {
+				let image = document.createElement("iframe");
+				image.setAttribute("src", params.file);
+				document.body.appendChild(image);
+				document.getElementById("content").remove();
+			}
+		</script>
+	</body>
+</html>
