@@ -27,7 +27,7 @@
 			const params = new Proxy(new URLSearchParams(window.location.search), {
 				get: (searchParams, prop) => searchParams.get(prop)
 			});
-			if (params.img) {
+			if (params.file) {
 				let image = document.createElement("img");
 				image.setAttribute("src", params.file);
 				image.setAttribute("class", "mx-auto d-block");
