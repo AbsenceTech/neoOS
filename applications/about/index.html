@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Information Application</title>
+		<title>About Application</title>
 		<link href="./resources/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 	</head>
 	<body>
@@ -19,14 +19,33 @@
 					<dl class="row">
 						<dt class="col-sm-3">Version</dt>
 						<dd class="col-sm-9">Unknown</dd>
+						<dt class="col-sm-3">Language</dt>
+						<dd class="col-sm-9" id="lang">N/A</dd>
+						<dt class="col-sm-3">Platform</dt>
+						<dd class="col-sm-9" id="platform">N/A</dd>
 						<dt class="col-sm-3">Memory</dt>
 						<dd class="col-sm-9" id="ram">N/A</dd>
+						<dt class="col-sm-3">Screen Size</dt>
+						<dd class="col-sm-9" id="screen">N/A</dd>
 					</dl>
 				</div>
 			</div>
 		</div>
 		<script>
+			// Language
+			document.getElementById('lang').innerHTML = navigator.language;
+			// RAM
 			document.getElementById('ram').innerHTML = navigator.deviceMemory.toString() + ' GB';
+			// Screen
+			let screenSize = '';
+			if (screen.width) {
+				width = (screen.width) ? screen.width : '';
+				height = (screen.height) ? screen.height : '';
+				screenSize += '' + width + " x " + height;
+			};
+			document.getElementById('screen').innerHTML = screenSize;
+			// Platform
+			document.getElementById("platform").innerHTML = navigator.platform;
 		</script>
 	</body>
 </html>
