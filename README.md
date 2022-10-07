@@ -14,6 +14,7 @@
 * * *
 </div>
 
+neoOS is an operating system which can be ran inside of a browser. It is built to function and look like the everyday operating system, however given that it is ran in the browser, advanced features like a file system won't be available in neoOS. I plan to fix this in the future by turning it into an Electron application by using the `nodeIntegration` feature and the `fs` API, but this also poses as a security risk as access to the internet is allowed in neoOS. If you have any ideas then please feel free to fork and send in a pull request!
 
 ## Languages Used
 - HTML
