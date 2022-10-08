@@ -55,5 +55,7 @@ function beginLoad() {
 	let loadVar = setTimeout(() => {
 		document.getElementById("loader").style.display = "none";
 		document.getElementById("navBar").style.display = "block";
+		let audio = new Audio('./sounds/freedesktop/service-login.oga');
+		audio.play();
 	}, 3000);
 }
