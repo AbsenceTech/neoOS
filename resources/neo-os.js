@@ -52,7 +52,7 @@ function openApp(title, url, width, height) {
 }
 
 function beginLoad() {
-	let loadVar = setTimeout(function () {
+	let loadVar = setTimeout(() => {
 		document.getElementById("loader").style.display = "none";
 		document.getElementById("navBar").style.display = "block";
 	}, 3000);
