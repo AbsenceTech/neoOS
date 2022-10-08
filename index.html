@@ -55,8 +55,22 @@
 			}
 		</style>
 	</head>
-	<body onload="startTime()" style="background-size:cover;background-image:url('./branding/wallpaper.jpg');background-color:#000;">
-		<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+	<body onload="beginLoad();startTime()" style="background-size:cover;background-image:url('./branding/wallpaper.jpg');background-color:#000;">
+		<div id="loader" style="position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);">
+			<div class="winbox focus" style="width:640px;height:480px;z-index:11;background:rgb(33,37,41);">
+				<div class="wb-header">
+					<div class="wb-drag"></div>
+				</div>
+				<div class="wb-body">
+					<div style="position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);">
+						<div class="spinner-border" role="status"></div>
+						<br>
+						<strong>Loading...</strong>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" id="navBar" style="display:none;">
 			<div class="container-fluid">
 				<div class="dropdown">
 					<a class="navbar-brand" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:white;cursor:default;">
@@ -130,9 +144,12 @@
 					}
 				});
 			}
-			$(document).ready(function() {
-				$('body').disableSelection();
-			});
+			function beginLoad() {
+				let loadVar = setTimeout({
+					document.getElementById("loader").style.display = "none";
+					document.getElementById("navBar").style.display = "block";
+				}, 3000);
+			}
 		</script>
 	</body>
 </html>
