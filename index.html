@@ -55,29 +55,30 @@
 			}
 			#navBar {
 				position: relative;
-				-webkit-animation-name: animatebottom;
+				-webkit-animation-name: finishLoadAnimation;
 				-webkit-animation-duration: 1s;
-				animation-name: animatebottom;
+				animation-name: finishLoadAnimation;
 				animation-duration: 1s;
 			}
-			@-webkit-keyframes animatebottom {
-				from { bottom:-100px; opacity:0 }
-				to { bottom:0px; opacity:1 }
+			@-webkit-keyframes finishLoadAnimation {
+				from { opacity:0 }
+				to { opacity:1 }
 			}
-			@keyframes animatebottom {
-				from { bottom:-100px; opacity:0 }
-				to { bottom:0; opacity:1 }
+			@keyframes finishLoadAnimation {
+				from { opacity:0 }
+				to { opacity:1 }
 			}
 		</style>
 	</head>
 	<body onload="beginLoad();startTime()" style="background-size:cover;background-image:url('./branding/wallpaper.jpg');background-color:#000;">
 		<div id="loader" style="position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);">
-			<div class="card" style="width:480px;height:360px;">
+			<div class="card" style="width:320px;height:240px;">
 				<div class="card-body">
 					<div style="position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);" class="text-center">
 						<div class="spinner-border" role="status">
 							<span class="visually-hidden">Loading...</span>
 						</div>
+						<br>
 						<p class="card-text">neoOS is starting</p>
 					</div>
 				</div>
