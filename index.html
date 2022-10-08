@@ -53,6 +53,21 @@
 				-ms-user-select: none;
 				user-select: none;
 			}
+			#navBar {
+				position: relative;
+				-webkit-animation-name: animatebottom;
+				-webkit-animation-duration: 1s;
+				animation-name: animatebottom;
+				animation-duration: 1s;
+			}
+			@-webkit-keyframes animatebottom {
+				from { bottom:-100px; opacity:0 }
+				to { bottom:0px; opacity:1 }
+			}
+			@keyframes animatebottom {
+				from { bottom:-100px; opacity:0 }
+				to { bottom:0; opacity:1 }
+			}
 		</style>
 	</head>
 	<body onload="beginLoad();startTime()" style="background-size:cover;background-image:url('./branding/wallpaper.jpg');background-color:#000;">
