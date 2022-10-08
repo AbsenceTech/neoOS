@@ -57,15 +57,13 @@
 	</head>
 	<body onload="beginLoad();startTime()" style="background-size:cover;background-image:url('./branding/wallpaper.jpg');background-color:#000;">
 		<div id="loader" style="position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);">
-			<div class="winbox focus" style="width:640px;height:480px;z-index:11;background:rgb(33,37,41);">
-				<div class="wb-header">
-					<div class="wb-title">Loading</div>
-				</div>
-				<div class="wb-body">
-					<div style="position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);">
-						<div class="spinner-border" role="status"></div>
-						<br>
-						<strong class="text-center">neoOS is starting</strong>
+			<div class="card" style="width:480px;height:360px;">
+				<div class="card-body">
+					<div style="position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);" class="text-center">
+						<div class="spinner-border" role="status">
+							<span class="visually-hidden">Loading...</span>
+						</div>
+						<p class="card-text">neoOS is starting</p>
 					</div>
 				</div>
 			</div>
