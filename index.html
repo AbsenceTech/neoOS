@@ -5,70 +5,7 @@
 		<title>neoOS Desktop</title>
 		<link rel="preload" href="./resources/winbox.bundle.min.js" as="script">
 		<link href="./resources/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-		<style>
-			.winbox {
-				background: #212529;
-				border-radius: 12px 12px 0 0;
-				box-shadow: 5px 10px 18px;
-			}
-			.wb-title {
-				font-family: "Inter", sans-serif;
-			}
-			.winbox-min {
-				border-radius: 0;
-			}
-			.wb-body {
-				margin: 4px;
-			}
-			.wb-control * {
-				opacity: 0.65;
-			}
-			.wb-control *:hover {
-				opacity: 1;
-			}
-			.wb-full {
-				display: none;
-			}
-			.wb-body::-webkit-scrollbar {
-				width: 12px;
-			}
-			.wb-body::-webkit-scrollbar-track {
-				background: transparent;
-			}
-			.wb-body::-webkit-scrollbar-thumb {
-				border-radius: 10px;
-				background: #263040;
-			}
-			.wb-body::-webkit-scrollbar-thumb:window-inactive {
-				background: #181f2a;
-			}
-			.wb-body::-webkit-scrollbar-corner {
-				background: transparent;
-			}
-			html, body, * {
-				-webkit-touch-callout: none;
-				-webkit-user-select: none;
-				-khtml-user-select: none;
-				-moz-user-select: none;
-				-ms-user-select: none;
-				user-select: none;
-			}
-			#navBar {
-				position: relative;
-				-webkit-animation-name: finishLoadAnimation;
-				-webkit-animation-duration: 1s;
-				animation-name: finishLoadAnimation;
-				animation-duration: 1s;
-			}
-			@-webkit-keyframes finishLoadAnimation {
-				from { opacity:0 }
-				to { opacity:1 }
-			}
-			@keyframes finishLoadAnimation {
-				from { opacity:0 }
-				to { opacity:1 }
-			}
-		</style>
+		<link href="./resources/neo-os.css" rel="stylesheet" crossorigin="anonymous">
 	</head>
 	<body onload="beginLoad();startTime()" style="background-size:cover;background-image:url('./branding/wallpaper.jpg');background-color:#000;">
 		<div id="loader" style="position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);">
@@ -109,61 +46,6 @@
 		<script src="./resources/winbox.bundle.min.js" async></script>
 		<script src="./resources/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 		<script src="./resources/jquery-3.6.1.min.js"></script>
-		<script>
-			function startTime() {
-				const today = new Date();
-				let d = today.getDate();
-				let mo = today.getMonth();
-				let y = today.getFullYear();
-				let h = today.getHours();
-				let m = today.getMinutes();
-				m = checkTime(m);
-				document.getElementById('timeDisplay').innerHTML = d + "/" + mo + "/" + y + " " + h + ":" + m;
-				setTimeout(startTime, 1000);
-			}
-			function checkTime(i) {
-				if (i < 10) {i = "0" + i};
-				return i;
-			}
-			function openApp(title, url, width, height) {
-				let Window = new WinBox({
-					title: title,
-					url: url,
-					width: width,
-					height: height,
-					x: "center",
-					y: "center",
-					top: 55,
-					right: 0,
-					bottom: 0,
-					left: 0,
-					oncreate: function() {
-						let appListName = document.createElement("li");
-						let node = document.createTextNode(title);
-						appListName.appendChild(node);
-						appListName.setAttribute("id", this.id);
-						appListName.setAttribute("class", "nav-link")
-						let appList = document.getElementById("appList");
-						appList.appendChild(appListName);
-					},
-					onclose: function() {
-						let appListName = document.getElementById(this.id);
-						appListName.remove();
-					},
-					onfocus: function(){
-						this.setBackground("#212529");
-					},
-					onblur: function(){
-						this.setBackground("#121517");
-					}
-				});
-			}
-			function beginLoad() {
-				let loadVar = setTimeout(function() {
-					document.getElementById("loader").style.display = "none";
-					document.getElementById("navBar").style.display = "block";
-				}, 3000);
-			}
-		</script>
+		<script src="./resources/neo-os.js"></script>
 	</body>
 </html>
