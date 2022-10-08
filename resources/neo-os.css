@@ -1,0 +1,89 @@
+.winbox {
+	background: #212529;
+	border-radius: 12px 12px 0 0;
+	box-shadow: 5px 10px 18px;
+}
+
+.wb-title {
+	font-family: "Inter", sans-serif;
+}
+
+.winbox-min {
+	border-radius: 0;
+}
+
+.wb-body {
+	margin: 4px;
+}
+
+.wb-control * {
+	opacity: 0.65;
+}
+
+.wb-control *:hover {
+	opacity: 1;
+}
+
+.wb-full {
+	display: none;
+}
+
+.wb-body::-webkit-scrollbar {
+	width: 12px;
+}
+
+.wb-body::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.wb-body::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background: #263040;
+}
+
+.wb-body::-webkit-scrollbar-thumb:window-inactive {
+	background: #181f2a;
+}
+
+.wb-body::-webkit-scrollbar-corner {
+	background: transparent;
+}
+
+html,
+body,
+* {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#navBar {
+	position: relative;
+	-webkit-animation-name: finishLoadAnimation;
+	-webkit-animation-duration: 1s;
+	animation-name: finishLoadAnimation;
+	animation-duration: 1s;
+}
+
+@-webkit-keyframes finishLoadAnimation {
+	from {
+		opacity: 0
+	}
+
+	to {
+		opacity: 1
+	}
+}
+
+@keyframes finishLoadAnimation {
+	from {
+		opacity: 0
+	}
+
+	to {
+		opacity: 1
+	}
+}
