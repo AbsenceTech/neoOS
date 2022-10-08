@@ -145,7 +145,7 @@
 				});
 			}
 			function beginLoad() {
-				let loadVar = setTimeout({
+				let loadVar = setTimeout(function() {
 					document.getElementById("loader").style.display = "none";
 					document.getElementById("navBar").style.display = "block";
 				}, 3000);
