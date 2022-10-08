@@ -1,49 +1,51 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>neoOS Desktop</title>
-		<link rel="preload" href="./resources/js/winbox.bundle.min.js" as="script">
-		<link href="./resources/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-		<link href="./resources/neo-os.css" rel="stylesheet" crossorigin="anonymous">
-	</head>
-	<body onload="beginLoad();startTime()" style="background-size:cover;background-image:url('./branding/wallpaper.jpg');background-color:#000;">
-		<div id="loader" style="position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);">
-			<div class="card" style="width:320px;height:240px;">
-				<div class="card-body">
-					<div style="position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);" class="text-center">
-						<div class="spinner-border" role="status" style="width: 3rem; height: 3rem;">
-							<span class="visually-hidden">Loading...</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" id="navBar" style="display:none;">
-			<div class="container-fluid">
-				<div class="dropdown">
-					<a class="navbar-brand" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:white;cursor:default;">
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#fff" viewBox="0 0 16 16">
-							<path d="M9.05.435c-.58-.58-1.52-.58-2.1 0L4.047 3.339 8 7.293l3.954-3.954L9.049.435zm3.61 3.611L8.708 8l3.954 3.954 2.904-2.905c.58-.58.58-1.519 0-2.098l-2.904-2.905zm-.706 8.614L8 8.708l-3.954 3.954 2.905 2.904c.58.58 1.519.58 2.098 0l2.905-2.904zm-8.614-.706L7.292 8 3.339 4.046.435 6.951c-.58.58-.58 1.519 0 2.098l2.904 2.905z"/>
-						</svg>
-					</a>
-					<ul class="dropdown-menu dropdown-menu-dark" style="cursor:default">
-						<li><a class="dropdown-item" onclick="openApp('Search', './applications/search/index.html', 640, 480)">Search</a></li>
-						<li><a class="dropdown-item" onclick="openApp('Image Viewer', './applications/image-viewer/index.html', 640, 480)">Image Viewer</a></li>
-						<li><a class="dropdown-item" onclick="openApp('Terminal', './applications/terminal/index.html', 640, 480)">Terminal</a></li>
-						<li><hr class="dropdown-divider"></li>
-						<li><a class="dropdown-item" onclick="openApp('About', './applications/about/index.html', 640, 480)">About</a></li>
-					</ul>
-				</div>
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0" id="appList"></ul>
-				<span class="navbar-text">
-					<span id="timeDisplay" style="color:white"></span>
-				</span>
-			</div>
-		</nav>
-		<script src="./resources/js/winbox.bundle.min.js" async></script>
-		<script src="./resources/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-		<script src="./resources/js/jquery-3.6.1.min.js"></script>
-		<script src="./resources/neo-os.js"></script>
-	</body>
-</html>
+<script>
+	document.write("<!DOCTYPE html>");
+document.write("<html>");
+document.write("	<head>");
+document.write("		<meta charset=\"UTF-8\">");
+document.write("		<title>neoOS Desktop</title>");
+document.write("		<link rel=\"preload\" href=\"./resources/js/winbox.bundle.min.js\" as=\"script\">");
+document.write("		<link href=\"./resources/css/bootstrap.min.css\" rel=\"stylesheet\" crossorigin=\"anonymous\">");
+document.write("		<link href=\"./resources/neo-os.css\" rel=\"stylesheet\" crossorigin=\"anonymous\">");
+document.write("	</head>");
+document.write("	<body onload=\"beginLoad();startTime()\" style=\"background-size:cover;background-image:url('./branding/wallpaper.jpg');background-color:#000;\">");
+document.write("		<div id=\"loader\" style=\"position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);\">");
+document.write("			<div class=\"card\" style=\"width:320px;height:240px;\">");
+document.write("				<div class=\"card-body\">");
+document.write("					<div style=\"position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);\" class=\"text-center\">");
+document.write("						<div class=\"spinner-border\" role=\"status\" style=\"width: 3rem; height: 3rem;\">");
+document.write("							<span class=\"visually-hidden\">Loading...</span>");
+document.write("						</div>");
+document.write("					</div>");
+document.write("				</div>");
+document.write("			</div>");
+document.write("		</div>");
+document.write("		<nav class=\"navbar sticky-top navbar-expand-lg navbar-dark bg-dark\" id=\"navBar\" style=\"display:none;\">");
+document.write("			<div class=\"container-fluid\">");
+document.write("				<div class=\"dropdown\">");
+document.write("					<a class=\"navbar-brand\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\" style=\"color:white;cursor:default;\">");
+document.write("						<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"#fff\" viewBox=\"0 0 16 16\">");
+document.write("							<path d=\"M9.05.435c-.58-.58-1.52-.58-2.1 0L4.047 3.339 8 7.293l3.954-3.954L9.049.435zm3.61 3.611L8.708 8l3.954 3.954 2.904-2.905c.58-.58.58-1.519 0-2.098l-2.904-2.905zm-.706 8.614L8 8.708l-3.954 3.954 2.905 2.904c.58.58 1.519.58 2.098 0l2.905-2.904zm-8.614-.706L7.292 8 3.339 4.046.435 6.951c-.58.58-.58 1.519 0 2.098l2.904 2.905z\"/>");
+document.write("						</svg>");
+document.write("					</a>");
+document.write("					<ul class=\"dropdown-menu dropdown-menu-dark\" style=\"cursor:default\">");
+document.write("						<li><a class=\"dropdown-item\" onclick=\"openApp('Search', './applications/search/index.html', 640, 480)\">Search</a></li>");
+document.write("						<li><a class=\"dropdown-item\" onclick=\"openApp('Image Viewer', './applications/image-viewer/index.html', 640, 480)\">Image Viewer</a></li>");
+document.write("						<li><a class=\"dropdown-item\" onclick=\"openApp('Terminal', './applications/terminal/index.html', 640, 480)\">Terminal</a></li>");
+document.write("						<li><hr class=\"dropdown-divider\"></li>");
+document.write("						<li><a class=\"dropdown-item\" onclick=\"openApp('About', './applications/about/index.html', 640, 480)\">About</a></li>");
+document.write("					</ul>");
+document.write("				</div>");
+document.write("				<ul class=\"navbar-nav me-auto mb-2 mb-lg-0\" id=\"appList\"></ul>");
+document.write("				<span class=\"navbar-text\">");
+document.write("					<span id=\"timeDisplay\" style=\"color:white\"></span>");
+document.write("				</span>");
+document.write("			</div>");
+document.write("		</nav>");
+document.write("		<script src=\"./resources/js/winbox.bundle.min.js\" async></script>");
+document.write("		<script src=\"./resources/js/bootstrap.bundle.min.js\" crossorigin=\"anonymous\"></script>");
+document.write("		<script src=\"./resources/js/jquery-3.6.1.min.js\"></script>");
+document.write("		<script src=\"./resources/neo-os.js\"></script>");
+document.write("	</body>");
+document.write("</html>");
+</script>
