@@ -28,11 +28,9 @@
 				get: (searchParams, prop) => searchParams.get(prop)
 			});
 			if (params.file) {
-				let image = document.createElement("img");
-				image.setAttribute("src", params.file);
-				image.setAttribute("class", "mx-auto d-block");
-				image.setAttribute("alt", 'Image failed to load');
-				document.body.appendChild(image);
+				document.body.style.backgroundImage = "url(\"" + params.file + "\")";
+				document.body.style.backgroundPosition = "center";
+				document.body.style.backgroundRepeat = "no-repeat";
 				document.getElementById("content").remove();
 			}
 		</script>
