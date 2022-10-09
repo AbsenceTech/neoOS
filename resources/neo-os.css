@@ -60,7 +60,7 @@ body,
 	user-select: none;
 }
 
-#navBar {
+#toLoad {
 	position: relative;
 	-webkit-animation-name: finishLoadAnimation;
 	-webkit-animation-duration: 1s;
