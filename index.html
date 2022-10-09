@@ -1,53 +1,49 @@
-<script>
-info="<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<head>
-		<meta charset=&#34;UTF-8&#34;>
+		<meta charset="UTF-8">
 		<title>neoOS Desktop</title>
-		<link rel=&#34;preload&#34; href=&#34;./resources/js/winbox.bundle.min.js&#34; as=&#34;script&#34;>
-		<link href=&#34;./resources/css/bootstrap.min.css&#34; rel=&#34;stylesheet&#34; crossorigin=&#34;anonymous&#34;>
-		<link href=&#34;./resources/neo-os.css&#34; rel=&#34;stylesheet&#34; crossorigin=&#34;anonymous&#34;>
+		<link rel="preload" href="./resources/js/winbox.bundle.min.js" as="script">
+		<link href="./resources/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+		<link href="./resources/neo-os.css" rel="stylesheet" crossorigin="anonymous">
 	</head>
-	<body onload=&#34;beginLoad();startTime()&#34; style=&#34;background-size:cover;background-image:url(&#39;./branding/wallpaper.jpg&#39;);background-color:#000;&#34;>
-		<div id=&#34;loader&#34; style=&#34;position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);&#34;>
-			<div class=&#34;card&#34; style=&#34;width:320px;height:240px;&#34;>
-				<div class=&#34;card-body&#34;>
-					<div style=&#34;position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);&#34; class=&#34;text-center&#34;>
-						<div class=&#34;spinner-border&#34; role=&#34;status&#34; style=&#34;width: 3rem; height: 3rem;&#34;>
-							<span class=&#34;visually-hidden&#34;>Loading...</span>
+	<body onload="beginLoad();startTime()" style="background-size:cover;background-image:url('./branding/wallpaper.jpg');background-color:#000;">
+		<div id="loader" style="position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);">
+			<div class="card" style="width:320px;height:240px;">
+				<div class="card-body">
+					<div style="position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);" class="text-center">
+						<div class="spinner-border" role="status" style="width: 3rem; height: 3rem;">
+							<span class="visually-hidden">Loading...</span>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<nav class=&#34;navbar sticky-top navbar-expand-lg navbar-dark bg-dark&#34; id=&#34;navBar&#34; style=&#34;display:none;&#34;>
-			<div class=&#34;container-fluid&#34;>
-				<div class=&#34;dropdown&#34;>
-					<a class=&#34;navbar-brand&#34; role=&#34;button&#34; data-bs-toggle=&#34;dropdown&#34; aria-expanded=&#34;false&#34; style=&#34;color:white;cursor:default;&#34;>
-						<svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;#fff&#34; viewBox=&#34;0 0 16 16&#34;>
-							<path d=&#34;M9.05.435c-.58-.58-1.52-.58-2.1 0L4.047 3.339 8 7.293l3.954-3.954L9.049.435zm3.61 3.611L8.708 8l3.954 3.954 2.904-2.905c.58-.58.58-1.519 0-2.098l-2.904-2.905zm-.706 8.614L8 8.708l-3.954 3.954 2.905 2.904c.58.58 1.519.58 2.098 0l2.905-2.904zm-8.614-.706L7.292 8 3.339 4.046.435 6.951c-.58.58-.58 1.519 0 2.098l2.904 2.905z&#34;/>
+		<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" id="navBar" style="display:none;">
+			<div class="container-fluid">
+				<div class="dropdown">
+					<a class="navbar-brand" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:white;cursor:default;">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#fff" viewBox="0 0 16 16">
+							<path d="M9.05.435c-.58-.58-1.52-.58-2.1 0L4.047 3.339 8 7.293l3.954-3.954L9.049.435zm3.61 3.611L8.708 8l3.954 3.954 2.904-2.905c.58-.58.58-1.519 0-2.098l-2.904-2.905zm-.706 8.614L8 8.708l-3.954 3.954 2.905 2.904c.58.58 1.519.58 2.098 0l2.905-2.904zm-8.614-.706L7.292 8 3.339 4.046.435 6.951c-.58.58-.58 1.519 0 2.098l2.904 2.905z"/>
 						</svg>
 					</a>
-					<ul class=&#34;dropdown-menu dropdown-menu-dark&#34; style=&#34;cursor:default&#34;>
-						<li><a class=&#34;dropdown-item&#34; onclick=&#34;openApp(&#39;Search&#39;, &#39;./applications/search/index.html&#39;, 640, 480)&#34; title=&#34;Surf the web&#34;>Search</a></li>
-						<li><a class=&#34;dropdown-item&#34; onclick=&#34;openApp(&#39;Image Viewer&#39;, &#39;./applications/image-viewer/index.html&#39;, 640, 480)&#34; title=&#34;View images&#34;>Image Viewer</a></li>
-						<li><a class=&#34;dropdown-item&#34; onclick=&#34;openApp(&#39;Terminal&#39;, &#39;./applications/terminal/index.html&#39;, 640, 480)&#34; title=&#34;Run a command&#34;>Terminal</a></li>
-						<li><hr class=&#34;dropdown-divider&#34;></li>
-						<li><a class=&#34;dropdown-item&#34; onclick=&#34;openApp(&#39;About&#39;, &#39;./applications/about/index.html&#39;, 640, 480)&#34; title=&#34;About neoOS&#34;>About</a></li>
+					<ul class="dropdown-menu dropdown-menu-dark" style="cursor:default">
+						<li><a class="dropdown-item" onclick="openApp('Search', './applications/search/index.html', 640, 480)" title="Surf the web">Search</a></li>
+						<li><a class="dropdown-item" onclick="openApp('Image Viewer', './applications/image-viewer/index.html', 640, 480)" title="View images">Image Viewer</a></li>
+						<li><a class="dropdown-item" onclick="openApp('Terminal', './applications/terminal/index.html', 640, 480)" title="Run a command">Terminal</a></li>
+						<li><hr class="dropdown-divider"></li>
+						<li><a class="dropdown-item" onclick="openApp('About', './applications/about/index.html', 640, 480)" title="About neoOS">About</a></li>
 					</ul>
 				</div>
-				<ul class=&#34;navbar-nav me-auto mb-2 mb-lg-0&#34; id=&#34;appList&#34;></ul>
-				<span class=&#34;navbar-text&#34;>
-					<span id=&#34;timeDisplay&#34; style=&#34;color:white&#34;></span>
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0" id="appList"></ul>
+				<span class="navbar-text">
+					<span id="timeDisplay" style="color:white"></span>
 				</span>
 			</div>
 		</nav>
-		<script src=&#34;./resources/js/winbox.bundle.min.js&#34; async></script>
-		<script src=&#34;./resources/js/bootstrap.bundle.min.js&#34; crossorigin=&#34;anonymous&#34;></script>
-		<script src=&#34;./resources/js/jquery-3.6.1.min.js&#34;></script>
-		<script src=&#34;./resources/neo-os.js&#34;></script>
+		<script src="./resources/js/winbox.bundle.min.js" async></script>
+		<script src="./resources/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+		<script src="./resources/js/jquery-3.6.1.min.js"></script>
+		<script src="./resources/neo-os.js"></script>
 	</body>
-</html>"
-
-document.write(info)
-</script>
+</html>
