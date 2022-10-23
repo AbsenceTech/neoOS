@@ -21,7 +21,7 @@ const apps = {}
 
 function openApp(title, url, width, height) {
 	let id = Math.random().toString(36).slice(2);
-	let apps[id] = new WinBox({
+	apps[id] = new WinBox({
 		id: id,
 		title: title,
 		url: url,
