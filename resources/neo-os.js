@@ -17,8 +17,12 @@ function checkTime(i) {
 	return i;
 }
 
+const apps = {}
+
 function openApp(title, url, width, height) {
-	let Window = new WinBox({
+	let id = Math.random().toString(36).slice(2);
+	let apps[id] = new WinBox({
+		id: id,
 		title: title,
 		url: url,
 		width: width,
