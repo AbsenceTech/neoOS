@@ -45,6 +45,7 @@ function openApp(title, url, width, height) {
 		onclose: function () {
 			let appListName = document.getElementById(this.id);
 			appListName.remove();
+			delete apps[this.id]
 		},
 		onfocus: function () {
 			this.setBackground("#212529");
