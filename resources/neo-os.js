@@ -21,6 +21,13 @@ const apps = {}
 
 function openApp(title, url, width, height) {
 	let id = Math.random().toString(36).slice(2);
+	let appListName = document.createElement("li");
+	let node = document.createTextNode(title);
+	appListName.appendChild(node);
+	appListName.setAttribute("id", "link" + id);
+	appListName.setAttribute("class", "nav-link")
+	let appList = document.getElementById("appList");
+	appList.appendChild(appListName);
 	apps[id] = new WinBox({
 		id: id,
 		title: title,
@@ -33,15 +40,6 @@ function openApp(title, url, width, height) {
 		right: 0,
 		bottom: 0,
 		left: 0,
-		oncreate: function () {
-			let appListName = document.createElement("li");
-			let node = document.createTextNode(title);
-			appListName.appendChild(node);
-			appListName.setAttribute("id", "link" + this.id);
-			appListName.setAttribute("class", "nav-link")
-			let appList = document.getElementById("appList");
-			appList.appendChild(appListName);
-		},
 		onclose: function () {
 			let appListName = document.getElementById("link" + this.id);
 			appListName.remove();
