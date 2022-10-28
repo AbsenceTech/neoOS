@@ -25,7 +25,7 @@ function openApp(title, url, width, height) {
 	let node = document.createTextNode(title);
 	appListName.appendChild(node);
 	appListName.setAttribute("id", "link" + id);
-	appListName.setAttribute("class", "nav-link")
+	appListName.setAttribute("class", "nav-link");
 	let appList = document.getElementById("appList");
 	appList.appendChild(appListName);
 	apps[id] = new WinBox({
@@ -54,6 +54,7 @@ function openApp(title, url, width, height) {
 			this.setBackground("#121517");
 		}
 	});
+	appListName.setAttribute("onclick", "apps[link" + id + "]" + ".focus()")
 }
 
 function beginLoad() {
