@@ -37,20 +37,22 @@ function openApp(title, url, width, height) {
 			let appListName = document.createElement("li");
 			let node = document.createTextNode(title);
 			appListName.appendChild(node);
-			appListName.setAttribute("id", this.id);
+			appListName.setAttribute("id", "link" + this.id);
 			appListName.setAttribute("class", "nav-link")
 			let appList = document.getElementById("appList");
 			appList.appendChild(appListName);
 		},
 		onclose: function () {
-			let appListName = document.getElementById(this.id);
+			let appListName = document.getElementById("link" + this.id);
 			appListName.remove();
 			delete apps[this.id]
 		},
 		onfocus: function () {
+			document.getElementById("link" + this.id).classList.add("active")
 			this.setBackground("#212529");
 		},
 		onblur: function () {
+			document.getElementById("link" + this.id).classList.remove("active")
 			this.setBackground("#121517");
 		}
 	});
