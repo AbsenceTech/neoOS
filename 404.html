@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Error</title>
+		<link href="./resources/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+	</head>
+	<body style="background-color:#000">
+		<div class="card" style="width:320px;height:240px;position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);">
+				<div class="card-body">
+					<h5 class="card-title">Error</h5>
+					<h6 class="card-subtitle mb-2 text-muted" id="time"></h6>
+					<p class="card-text">This is not what you are looking for.</p>
+				</div>
+		</div>
+		<script>
+			const today = new Date();
+			let d = today.getDate();
+			let mo = today.getMonth();
+			let y = today.getFullYear();
+			let h = today.getHours();
+			let m = today.getMinutes();
+			document.getElementById('time').innerHTML = d + "/" + mo + "/" + y + " " + h + ":" + m;
+		</script>
+	</body>
+</html>
