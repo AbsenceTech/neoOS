@@ -54,7 +54,7 @@ function openApp(title, url, width, height) {
 			this.setBackground("#121517");
 		}
 	});
-	appListName.setAttribute("onclick", "apps[\"link" + id + "\"]" + ".focus()")
+	appListName.setAttribute("onclick", "apps[\"" + id + "\"]" + ".focus()")
 }
 
 function beginLoad() {
